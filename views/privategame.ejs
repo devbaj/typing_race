@@ -1,1 +1,31 @@
-hello from privategame.ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Join Private Game | Typing Race</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="header__title">Join a private game...</h1>
+    </div>
+    <div class="main">
+      <p>
+        In order to join a private game, you must enter the keyword your
+        your friend used to create the game.
+      </p>
+      <form action="/game/join/private" method="post">
+        <input
+          type="text"
+          name="key"
+          id="key"
+          required
+        >
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

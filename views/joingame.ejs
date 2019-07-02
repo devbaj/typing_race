@@ -1,3 +1,22 @@
-Hello from joingame.ejs
-
-<a href="/game/join/private"><button>Join Private Game</button></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Join Game | Typing Race</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="header__title">Joinable Public Games</h1>
+      <a href="/game/join/private"><button>Join Private Game</button></a>
+    </div>
+    <div class="main">
+      <% for (let g of waitingGames) { %>
+        <p>--some info about each room?--</p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
