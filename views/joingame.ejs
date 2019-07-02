@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Join Game | Typing Race</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/sockets.js"/></script>
 </head>
 <body>
   <div class="container">
@@ -13,9 +16,7 @@
       <a href="/game/join/private"><button>Join Private Game</button></a>
     </div>
     <div class="main">
-      <% for (let g of waitingGames) { %>
-        <p>--some info about each room?--</p>
-      <% } %>
+        <p>list of games goes here</p>
     </div>
   </div>
 </body>
