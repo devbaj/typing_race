@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Typing Race!</title>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
 </head>
 <body>
   <div class="container">
@@ -18,6 +23,24 @@
         <span class="content__intro--highlight">and</span>
         accurate to win!
       </p>
+      <div class="username">
+        <input type="text" name="username" id="username">
+        <button id="username-submit">Submit</button>
+        <img
+          src="/img/xmark.png"
+          alt="X"
+          height="25"
+          width="25"
+          id="username-x"
+        >
+        <img
+          src="/img/check.png"
+          alt="check"
+          height="25"
+          width="25"
+          id="username-check"
+        >
+      </div>
       <div class="content__linkbox">
         <a href="/game/new"><button>Start a new game</button></a>
         <a href="/game/join"><button>Join an existing game</button></a>

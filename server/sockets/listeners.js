@@ -4,8 +4,9 @@ module.exports = io => {
     console.log('connected to client');
     emit.greet(socket);
     emit.newConnection(socket);
-    socket.on('userJoined', data => {
-      emit.confirmUser(socket, data.user);
-    });
+
+    // socket.on('userJoined', data => {
+      // emit.confirmUser(socket, data.user);
+    // });
   });
 }
