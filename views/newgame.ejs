@@ -9,6 +9,7 @@
     src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
   </script>
   <link rel="stylesheet" type="text/css" href='/css/site.css'>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
   <script src="/js/newgame.js"></script>
 </head>
 <body>
@@ -20,12 +21,11 @@
   <div class="content">
     <form
       id="new-game"
-      action="/game/new/create"
-      method="post"
       class="content__form"
+      onsubmit="return handleFormSubmission()"
     >
 
-      <div class="radio-options">
+      <fieldset class="radio-options">
         <p>Choose a privacy level:</p>
 
         <input
@@ -45,11 +45,12 @@
           required
         >
         <label for="private">Private</label>
-      </div>
+      </fieldset>
 
-      <label id="key-label" for="key">Keyword</label>
-      <input type="text" name="key" id="key">
-      <button type="submit">Launch</button>
+      <p id="key-label">Key:</p>
+      <p id="key"></p>
+
+      <button id="newgame-submit">Launch</button>
     </form>
   </div>
 </body>

@@ -5,10 +5,6 @@ $(document).ready( () => {
   console.log('doc ready');
   var socket = io();
 
-  socket.on('greet', payload => {
-    console.log(payload.msg);
-  });
-
   socket.on('newConnection', payload => {
     console.log(payload.msg);
   });

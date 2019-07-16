@@ -13,5 +13,7 @@ module.exports ={
   waitingRoom: (req, res) => {
     // T
     res.render('waitingroom');
-  }
+  },
+
+  play: (req, res) => res.render('game')
 }
