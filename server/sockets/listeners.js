@@ -1,5 +1,7 @@
 const controller = require('../controller');
 module.exports = io => {
+  var usernames = {};
+
   io.on('connect', socket => {
     var emit = require('./emitters.js');
     console.log('connected to client');
@@ -7,6 +9,10 @@ module.exports = io => {
     // greet and broadcast upon socket connection
     emit.greet(socket);
     emit.newConnection(socket);
+
+    socket.on("newUser", user => {
+      console.log(user);
+    });
 
     // socket.on('userJoined', data => {
       // emit.confirmUser(socket, data.user);
@@ -18,7 +24,9 @@ module.exports = io => {
     });
     socket.on("createPrivateGame", data => {
       // TODO initialize game settings
-      console.log(data);
+      socket.room = data.key;
+      socket.join(data.key);
+      emit.privateGameCreated(socket, data.user, data.key);
     });
 
     // ** listeners needed for game logic

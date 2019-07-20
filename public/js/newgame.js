@@ -10,12 +10,11 @@ for (let i = 0; i < 8; i++)
 
 $(document).ready( () => {
   console.log('doc ready');
-
   // hide and disable key input field by default
   $("input#public").prop("checked", true);
   $("#key-label").hide();
   $("#key").hide();
-$("#key").html(key);
+  $("#key").html(key);
 
   // check to perform when user clicks on a privacy input button
   $("input[name='privacy']").click( () => {
@@ -37,17 +36,16 @@ $("#key").html(key);
 // take over form submission
 function handleFormSubmission() {
   console.log("submission intercepted");
-  var user = window.localStorage.getItem("username");
+  var username = window.localStorage.getItem("username");
   var privacyLevel = $("input[name='privacy']:checked").val();
   var isPrivate = privacyLevel == "private" ? true : false;
   console.log("Privacy Level: " + privacyLevel);
   // different socket behavior for public vs private game
   if ( isPrivate ) {
-    socket.emit("createPrivateGame", {user, key});
+    socket.emit("createPrivateGame", {username, key});
     window.location.href = "/game/await";
   } else {
-    socket.emit("createPublicGame", {user});
-
+    socket.emit("createPublicGame", user);
   }
   return false;
 }

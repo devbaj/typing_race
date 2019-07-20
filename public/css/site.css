@@ -17,3 +17,15 @@ form {
 fieldset {
   border: none;
 }
+
+textarea {
+  border: 1px solid black;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+
+  resize: none;
+}

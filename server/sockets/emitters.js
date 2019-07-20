@@ -12,7 +12,11 @@ module.exports = {
 
   // confirmUser: (socket, user) => {
     // socket.emit('confirmUser', {success: true, name: user})
-  // }
+  // }username
+
+  privateGameCreated: (socket, user, room) => {
+    socket.broadcast.to(room).emit("newPlayer", user);
+  },
 
   sendText: (socket, text) => {
     socket.broadcast.emit("addText", {text});

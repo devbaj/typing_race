@@ -1,4 +1,6 @@
 // ! scripts specific to index.js
+var socket = io();
+
 $(document).ready( () => {
   console.log("doc ready - index.js");
   $(".content__linkbox").hide();
@@ -15,6 +17,7 @@ function handleFormSubmission() {
   var user = $("input#username").val();
   if (user.match(USERNAME_REGEX)) {
     // store username in for use when we open the socket later
+    socket.emit("newUser", user);
     window.localStorage.setItem("username", user);
     $("input#username").prop("disabled", true);
     $("button#username-submit").prop("disabled", true);
